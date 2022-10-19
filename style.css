@@ -1,0 +1,199 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	scroll-behavior: smooth;
+}
+body{
+	overflow-x: hidden;
+}
+nav{
+	position: fixed;
+	top: 0;
+	transition: transform 1s;
+	left: 0;
+	transform: translate(-100%,0);
+	width: 15vw;
+	height: 100vh;
+	background: white;
+	opacity: 0.8;
+	border-right: 1px solid black;
+	overflow: hidden;
+	z-index: 2;
+}
+nav.clicked{
+	transform: translate(0,0);
+}
+nav ul{
+	margin-top: 25vh;
+}
+nav ul li{
+	color: black;
+	list-style-type: none;
+	font-size: 1.75em;
+	padding: 10px 0;
+	width: 100%;
+	text-align: center;
+	cursor: pointer;
+}
+nav ul li ul{
+	margin: 0;
+	display: none;
+}
+nav ul li:hover{
+}
+/*nav ul li:hover ul{
+	display: block;
+}*/
+nav ul li:hover ul li{
+	font-size: 0.5em;	
+	border-bottom: 1px solid black;
+	border-collapse: collapse;
+}
+nav ul li ul li:hover{
+	font-size: 0.75em;
+}
+div.hamburger{
+	z-index: 3;
+	position: fixed;
+	top: 5%;
+	left: 2.5%;
+	width: 30px;
+	cursor: pointer;
+	/*border: 2px solid black;
+	border-radius: 50%;
+	background: white;*/
+}
+div.hamburger div{
+	position: relative;
+	left: 0;
+	height: 4px;
+	width: 100%;
+	border-radius: 30%;
+	background: white;
+	transition: 1s;
+}
+div#hmb1{top: 0;}
+div#hmb2{top: 7.5px;}
+div#hmb3{top: 15px;}
+div.clicked div{ background: black; }
+div.clicked div#hmb1{
+	transform-origin: left;
+	transform: rotate(45deg);
+}
+div.clicked div#hmb2{
+	opacity: 0;
+}
+div.clicked div#hmb3{
+	transform-origin: left;
+	transform: rotate(-45deg);
+}
+header ul{
+	z-index: 1;
+	position: fixed;
+	margin-top: 5vh;
+	margin-left: 20vh;
+}
+header ul li{
+	color: white;
+	float: left;
+	font-size: 1.75em;
+	list-style-type: none;
+	margin-right: 5vh;
+	cursor: pointer;
+	transition: font-size 1s;
+	color: #fff;
+  	text-shadow: 
+  		0px 0px 8px #0fa,
+  		0px 0px 12px #0fa;
+
+}
+header ul li.active, header ul li:hover{
+	font-size: 2em;
+}
+header ul li div{
+	height: 4px;
+	width: 8px;
+	background: white;
+	border-radius: 4px;
+	transition: width 1s;
+}
+header ul li:hover div{
+	width: 100%;
+}
+header ul li:focus{
+	border: none;
+}
+header ul li.active div{
+	width: 100%;
+}
+
+header img.logo{
+	z-index: 4;
+	position: fixed;
+	top: 5vh;
+	right: 5vh;
+	height: 15vh;
+}
+
+div.parallax{
+	position: relative;
+	height: 100vh;
+	background-size: cover;
+	overflow: hidden;
+}
+div.parallax h1{
+	color: white;
+	position: relative;
+	top: 20vh;
+	left: 20vw;
+	width: fit-content;
+	font-size: 10vh;
+	text-shadow: 0px 0px 8px pink, 0px 0px 12px pink;
+	font-family: roboto, sans-serif;
+}
+div.parallax h1:first-letter{
+	font-size: 20vh;
+}
+div.parallax p{
+	/*font: monospace;*/
+	color: white;
+	position: relative;
+	font-size: 4vh;
+	top: 25vh;
+	left: 20vw;
+	width: 50vw;
+	text-shadow: 0px 0px 6px aquamarine, 0px 0px 10px aquamarine;
+}
+div.parallax:nth-child(1)
+{
+	background-image: url("Bg1.jpg");
+}
+div.parallax:nth-child(2)
+{
+	background-image: url("Bg2.jpg");
+}
+div.parallax:nth-child(3)
+{
+	background-image: url("Bg3.jpg");
+}
+div.parallax:nth-child(4)
+{
+	background-image: url("Bg4.jpg");
+}
+img#img1{
+	position: absolute;
+	left: calc(40vw - 25vh);
+	top: 25vh;
+	height: 50vh;
+	width: 50vh;
+	opacity: 0.8;
+}
+img#img3{
+	position: absolute;
+	right: -3vw;
+	bottom: 0;
+	height: 90vh;
+	opacity: 0.8;
+}
